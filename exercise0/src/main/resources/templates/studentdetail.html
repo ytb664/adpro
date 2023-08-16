@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h2>Student Detail</h2>
+  <hr>
+  <div th:object="${student}">
+    <p><b>Student Id: </b> <span th:utext="*{studentId}"></span></p>
+    <p><b>Name: </b> <span th:utext="*{name}"></span></p>
+    <p><b>GPA: </b> <span th:utext="*{gpa}"></span></p>
+  </div>
+  <hr>
+  <a th:href="@{/students/findAll}"> Back to Student List</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h2>Add Student</h2>
+  <hr>
+  <form action="#" th:action="@{/students/create}" th:object="${student}"
+        method="POST">
+    <h6>Student Id:</h6>
+    <input type="text" th:field="*{studentId}" placeholder="e.g. 2206834762"
+           class="form-control mb-4 col-4">
+    <h6>Student Name:</h6>
+    <input type="text" th:field="*{name}" placeholder="e.g. Sebastian De Feauli Aure"
+           class="form-control mb-4 col-4">
+    <h6>Student GPA:</h6>
+    <input type="number" th:field="*{gpa}" placeholder="e.g. 3,5"
+           class="form-control mb-4 col-4">
+    <button type="submit" class="btn btn-info col-2">Save
+      Student</button>
+  </form>
+  <hr>
+  <a th:href="@{/students/findAll}"> Back to Student List</a>
+</div>
+</body>
+</html>
